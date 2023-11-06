@@ -1,0 +1,33 @@
+{
+  "name": "p-layout-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/p-layout-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/p-layout-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "p-layout:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "p-layout:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "p-layout:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/p-layout-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["p-layout"]
+}

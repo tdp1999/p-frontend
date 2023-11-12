@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@shared/components/breadcrumb": [
+        "libs/shared/components/breadcrumb/src/index.ts"
+      ],
+      "@shared/components/layouts": [
+        "libs/shared/components/layouts/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
